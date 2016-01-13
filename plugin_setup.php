@@ -1,11 +1,7 @@
 <?php
 $DEBUG=false;
 
-$fppWWWPath = '/opt/fpp/www/';
-set_include_path(get_include_path() . PATH_SEPARATOR . $fppWWWPath);
-
-
-require("common.php");
+include_once "common.php";
 include_once 'functions.inc.php';
 include_once 'commonFunctions.inc.php';
 $pluginName = "StockTicker";
@@ -24,9 +20,9 @@ if (file_exists($pluginConfigFile))
 
 	foreach ($pluginSettings as $key => $value) {
 
-		if($DEBUG)
+		if($DEBUG) {
 			echo "Key: ".$key." " .$value."\n";
-
+		}
 			$$key = urldecode($value);
 
 	}
@@ -59,7 +55,7 @@ if(file_exists($messageQueuePluginPath."functions.inc.php"))
 } else {
 	logEntry("Message Queue Plugin not installed, exiting");
 	echo "Message Queue plugin not installed, please install this pre-requisite first";
-	exit(1);
+//	exit(1);
 }
 
 
@@ -108,9 +104,9 @@ if (file_exists($pluginConfigFile)) {
 
 		foreach ($pluginSettings as $key => $value) {
 
-			if($DEBUG)
+			if($DEBUG) {
 				echo "Key: ".$key." " .$value."\n";
-	
+			}
 				$$key = urldecode($value);
 			}
 	}  else {
@@ -190,7 +186,7 @@ MATRIX Message Plugin Location: (IP Address. default 127.0.0.1);
 echo "<p/> \n";
 echo "QUOTES (Comma Separated): \n";
 
-echo "<input type=\"text\" name=\"QUOTES\" size=\"4\" value=\"".$QUOTES."\"> \n";
+echo "<input type=\"text\" name=\"QUOTES\" size=\"32\" value=\"".$QUOTES."\"> \n";
 
 echo "<p/> \n";
 
@@ -234,8 +230,8 @@ echo "<p/> \n";
 </form>
 
 
-<form method="post" action="http://<? echo $_SERVER['SERVER_NAME']?>/plugin.php?plugin=<?echo $pluginName;?>&page=messageManagement.php">
-<input id="MessageManagementButton" name="Message Management" type="submit" value="Message Management">
+<form method="post" action="http://<? echo $_SERVER['SERVER_NAME']?>/plugin.php?plugin=<?echo $pluginName;?>&page=stockMessageManagement.php">
+<input id="MessageManagementButton" name="Stock Message Management" type="submit" value="Stock Message Management">
 </form>
 
 

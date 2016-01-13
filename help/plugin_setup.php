@@ -1,7 +1,7 @@
-<b>SMS Control help</b>
+<b>Stock Ticker Plugin Control help</b>
 
 
 
 <p>
-Welcome to the SMS tools plugin
+Welcome to the Stock Ticker  plugin
 

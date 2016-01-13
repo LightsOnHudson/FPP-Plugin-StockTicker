@@ -4,7 +4,7 @@
 include_once "/opt/fpp/www/common.php";
 include_once 'functions.inc.php';
 include_once 'commonFunctions.inc.php';
-$pluginName = "MailControl";
+$pluginName = "StockTicker";
 
 $messageQueue_Plugin = "MessageQueue";
 $MESSAGE_QUEUE_PLUGIN_ENABLED=false;
@@ -28,7 +28,7 @@ if(file_exists($messageQueuePluginPath."functions.inc.php"))
 }
 
 
-$gitURL = "https://github.com/LightsOnHudson/FPP-Plugin-SMS.git";
+$gitURL = "https://github.com/LightsOnHudson/FPP-Plugin-".$pluginName.".git";
 
 
 
