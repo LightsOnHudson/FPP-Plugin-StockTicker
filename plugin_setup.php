@@ -83,7 +83,7 @@ if(isset($_POST['submit']))
 
 //	echo "Writring config fie <br/> \n";
 	
-	WriteSettingToFile("ENABLED",urlencode($_POST["ENABLED"]),$pluginName);
+//	WriteSettingToFile("ENABLED",urlencode($_POST["ENABLED"]),$pluginName);
 	WriteSettingToFile("LAST_READ",urlencode($_POST["LAST_READ"]),$pluginName);
 	WriteSettingToFile("API_USER_ID",urlencode($_POST["API_USER_ID"]),$pluginName);
 	WriteSettingToFile("API_KEY",urlencode($_POST["API_KEY"]),$pluginName);
@@ -160,12 +160,12 @@ $reboot=0;
 
 echo "ENABLE PLUGIN: ";
 
-if($ENABLED== 1 || $ENABLED == "on") {
-		echo "<input type=\"checkbox\" checked name=\"ENABLED\"> \n";
-//PrintSettingCheckbox("Radio Station", "ENABLED", $restart = 0, $reboot = 0, "ON", "OFF", $pluginName = $pluginName, $callbackName = "");
-	} else {
-		echo "<input type=\"checkbox\"  name=\"ENABLED\"> \n";
-}
+//if($ENABLED== 1 || $ENABLED == "on") {
+	//	echo "<input type=\"checkbox\" checked name=\"ENABLED\"> \n";
+PrintSettingCheckbox("Stock Ticker", "ENABLED", $restart = 0, $reboot = 0, "ON", "OFF", $pluginName = $pluginName, $callbackName = "");
+//	} else {
+//		echo "<input type=\"checkbox\"  name=\"ENABLED\"> \n";
+//}
 
 echo "<p/> \n";
 echo "Immediately output to Matrix (Run MATRIX plugin): ";

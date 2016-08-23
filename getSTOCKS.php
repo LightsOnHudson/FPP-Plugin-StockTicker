@@ -44,7 +44,7 @@ if(file_exists($messageQueuePluginPath."functions.inc.php"))
 
 
 define('LOCK_DIR', '/tmp/');
-define('LOCK_SUFFIX', '.lock');
+define('LOCK_SUFFIX', $pluginName.'.lock');
 
 $pluginConfigFile = $settings['configDirectory'] . "/plugin." .$pluginName;
 if (file_exists($pluginConfigFile))
@@ -71,7 +71,7 @@ if(($pid = lockHelper::lock()) === FALSE) {
 
 }
 
-if($ENABLED != "on" && $ENABLED != "1") {
+if($ENABLED != "ON" && $ENABLED != "1") {
 	logEntry("Plugin Status: DISABLED Please enable in Plugin Setup to use & Restart FPPD Daemon");
 	lockHelper::unlock();
 	exit(0);
